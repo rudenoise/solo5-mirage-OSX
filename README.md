@@ -25,6 +25,7 @@ ls
 There should be _iso_ and _img_ files for the kernel and disk:
 ```
 kernel.iso
+disk.img
 ```
 
 Copy the file from the container to the host (OSX):
