@@ -31,7 +31,15 @@ brew install qemu
 
 Run the iso:
 ```sh
-qemu-system-x86_64 -s -nographic -name foo -m 1024 -cdrom kernel.iso -net nic,model=virtio -net tap,ifname=bridge0,script=kvm-br.bash -drive file=disk.img,if=virtio -boot d
+qemu-system-x86_64 \
+    -s -nographic \
+    -name mirage \
+    -m 1024 \
+    -cdrom kernel.iso \
+    -net nic,model=virtio,macaddr=54:54:00:55:55:55 \
+    -net tap,script=./tap-up.sh,downscript=./tap-down.sh \
+    -drive file=disk.img,if=virtio \
+    -boot d
 ```
 
 ## Links
