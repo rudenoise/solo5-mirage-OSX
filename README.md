@@ -1,8 +1,13 @@
 # solo5-mirage-OSX
 
-_NOT QUITE WORKING_
-
 Run a mirageOS unikernel built with solo5 on QEMU on OSX
+
+Check that you have a _bridge0_ interface:
+```sh
+ifconfig bridge0
+```
+
+If not set one up as per [this guide](http://drupal.bitfunnel.net/drupal/macosx-bridge-qemu).
 
 Checkout the _mirage_ branch of the [Solo5](https://github.com/djwillia/solo5/tree/mirage) repo.
 
@@ -52,8 +57,15 @@ sudo qemu-system-x86_64 \
     -boot d
 ```
 
+In another terminal:
+```sh
+sudo ifconfig tap0 10.0.0.1 alias
+```
+
 ## Current output
 
+Assuming that you see the output below, the Mirage Site should be up
+at (http://10.0.0.2/)[http://10.0.0.2/]
 
 ```
             |      ___|
