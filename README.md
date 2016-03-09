@@ -46,7 +46,7 @@ sudo qemu-system-x86_64 \
     -name mirage \
     -m 1024 \
     -cdrom kernel.iso \
-    -net nic,model=virtio,macaddr=54:54:00:55:55:55 \
+    -net nic,model=virtio \
     -net tap,script=./tap-up.sh,downscript=./tap-down.sh \
     -drive file=disk.img,if=virtio \
     -boot d
@@ -56,9 +56,6 @@ sudo qemu-system-x86_64 \
 
 
 ```
-WARNING: Image format was not specified for 'disk.img' and probing guessed raw.
-         Automatically detecting the format is dangerous for raw images, write operations on block 0 will be restricted.
-         Specify the 'raw' format explicitly to remove the restrictions.
             |      ___|
   __|  _ \  |  _ \ __ \
 \__ \ (   | | (   |  ) |
@@ -73,9 +70,6 @@ getenv(CAMLRUNPARAM) -> null
 getenv(PATH) -> null
 Unsupported function lseek called in Mini-OS kernel
 Unsupported function lseek called in Mini-OS kernel
-
-
- 35 *.annot
 Unsupported function lseek called in Mini-OS kernel
 getenv(OCAMLRUNPARAM) -> null
 getenv(CAMLRUNPARAM) -> null
@@ -89,10 +83,21 @@ lib/solo5_stubs.c: connect!!
 lib/solo5_stubs.c: WARNING: returning hardcoded MAC
 Netif: plugging into tap0 with mac 52:54:00:12:34:56
 Netif: connect tap0
- tap0 with mac 52:54:00:12:34:56
+tap0 with mac 52:54:00:12:34:56
 Attempt to open(/dev/urandom)!
 Unsupported function getpid called in Mini-OS kernel
 Unsupported function getppid called in Mini-OS kernel
+Manager: connect
+Manager: configuring
+Manager: Interface to 10.0.0.2 nm 255.255.255.0 gw [10.0.0.1]
+
+Manager: connect
+Manager: configuring
+Manager: Interface to 10.0.0.2 nm 255.255.255.0 gw [10.0.0.1]
+
+ARP: sending gratuitous from 10.0.0.2
+Manager: configuration done
+Listening on http://localhost/
 ```
 
 ```
