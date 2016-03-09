@@ -113,7 +113,7 @@ Listening on http://localhost/
 ```
 
 ```
-ifconfig tap0
+# ifconfig tap0
 tap0: flags=8943<UP,BROADCAST,RUNNING,PROMISC,SIMPLEX,MULTICAST> mtu 1500
     ether 72:22:82:06:d4:00
     inet 10.0.0.1 netmask 0xff000000 broadcast 10.255.255.255
